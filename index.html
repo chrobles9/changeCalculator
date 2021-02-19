@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Change Coin Calculator</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Change Coin Calculator</title>
+    <link rel="stylesheet" href="css/mainStyles.css" />
+    <script src="js/calcScript.js" defer></script>
+  </head>
+
+  <body>
+    <header class="mainHeading">
+      <h1>Change Coin Calculator</h1>
+      <div class="subHeadContainer">
+        <h2 class="subHeading">Created By <span class="accentRed">C</span>arlos<span class="accentRed">R</span>obles</h2>
+        <h3 class="subHeading">Powered By <span class="accentRed">J</span>ava<span class="accentRed">S</span>cript</h3>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="calculator">
+
+        <!-- User Input Area  -->
+        <label for="centsInput">Enter cents amount:</label>
+        <input type="text" id="centsInput" placeholder="Enter number of cents (0-99)">
+
+        <!-- Button to begin JavaScript functionality and display output to user  -->
+        <button id="calculate">Calculate</button>
+
+        <!-- Coin Calculator Display Output  -->
+        <label for="quarters">Quarters:</label>
+        <input type="text" id="quarters">
+
+        <label for="dimes">Dimes:</label>
+        <input type="text" id="dimes">
+
+        <label for="nickels">Nickles:</label>
+        <input type="text" id="nickels">
+
+        <label for="pennies">Pennies:</label>
+        <input type="text" id="pennies">
+
+      </div>
+    </main>
+  </body>
 </html>
