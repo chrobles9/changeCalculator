@@ -1,9 +1,9 @@
 // Parse and calculate for each coin value
-
-function changeCalculate() {
+function changeCalculate(event) {
+  // Prevents form submission 
+  event.preventDefault();
   // Gets users cents input
   let cents = document.getElementById("centsInput").value;
-
   // Stores new number to be calculated
   let newNum = 0;
 
@@ -13,12 +13,12 @@ function changeCalculate() {
     newNum = parseInt(cents / coin.value);
     // Displays coin amount to corresponding label
     document.getElementById(coin.name).value = newNum;
-
+    // Subtract current coin value from cents remaining for new total
     cents = cents - coin.value * newNum;
   });
 }
 
-// Array of coin objects
+// Array of coin objects for loop in function
 const coins = [
   { name: "quarters", value: 25 },
   { name: "dimes", value: 10 },
@@ -26,7 +26,6 @@ const coins = [
   { name: "pennies", value: 1 },
 ];
 
-// Get change element from doc and add button event listeners
-document
-  .getElementById("calculateBtn")
-  .addEventListener("click", changeCalculate, false);
+// Get form and add event listener to submit button 
+const form = document.getElementById("form");
+form.addEventListener("submit", changeCalculate);
