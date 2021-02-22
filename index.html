@@ -1,47 +1,95 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Change Coin Calculator</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel='stylesheet' href='css/mainStyles.css' />
-    <script src='js/calcScript.js' defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/mainStyles.css" />
+    <script src="js/calcScript.js" defer></script>
   </head>
 
   <body>
-    <header class='mainHeading'>
+    <header class="mainHeading">
       <h1>Change Coin Calculator</h1>
-      <div class='subHeadContainer'>
-        <h2 class='subHeading'>Created By <span class='accentRed'>C</span>arlos<span class='accentRed'>R</span>obles</h2>
-        <h3 class='subHeading'>Powered By <span class='accentRed'>J</span>ava<span class='accentRed'>S</span>cript</h3>
+      <div class="subHeadContainer">
+        <h2 class="subHeading">
+          Created By <span class="accent">C</span>arlos<span class="accent"
+            >R</span
+          >obles
+        </h2>
+        <h3 class="subHeading">
+          Powered By <span class="accent">J</span>ava<span class="accent"
+            >S</span
+          >cript
+        </h3>
       </div>
     </header>
 
-    <main class='content'>
-      <form id= "form" class='calculator'>
+    <main class="container">
+      <form id="form" class="calculator">
+        <section class="formControl">
+          <!-- User Input Area  -->
+          <label for="centsInput">Enter cents amount:</label>
+          <input
+            type="text"
+            id="centsInput"
+            placeholder="Enter number of cents (0-99)"
+          />
 
-        <!-- User Input Area  -->
-        <label for='centsInput'>Enter cents amount:</label>
-        <input type='text' id='centsInput' placeholder='Enter number of cents (0-99)'>
+          <!-- Button to begin JavaScript functionality and display output to user  -->
+          <button id="calculateBtn" type="submit">Calculate</button>
+        </section>
 
-        <!-- Button to begin JavaScript functionality and display output to user  -->
-        <button id='calculateBtn' type="submit">Calculate</button>
+        <section class="display">
+          <!-- Coin Calculator Display Output  -->
+          <section class="coins">
+            <label for="quarters">Quarters:</label>
+            <input
+              type="text"
+              id="quarters"
+              class="coinDisplay"
+              disabled="disabled"
+            />
+          </section>
 
-        <!-- Coin Calculator Display Output  -->
-        <label for='quarters'>Quarters:</label>
-        <input type='text' id='quarters' class = 'coinDisplay' disabled = 'disabled'>
+          <section class="coins">
+            <label for="dimes">Dimes:</label>
+            <input
+              type="text"
+              id="dimes"
+              class="coinDisplay"
+              disabled="disabled"
+            />
+          </section>
 
-        <label for='dimes'>Dimes:</label>
-        <input type='text' id='dimes' class = 'coinDisplay' disabled = 'disabled'>
+          <section class="coins">
+            <label for="nickels">Nickles:</label>
+            <input
+              type="text"
+              id="nickels"
+              class="coinDisplay"
+              disabled="disabled"
+            />
+          </section>
 
-        <label for='nickels'>Nickles:</label>
-        <input type='text' id='nickels' class = 'coinDisplay' disabled = 'disabled'>
-
-        <label for='pennies'>Pennies:</label>
-        <input type='text' id='pennies' class = 'coinDisplay' disabled = 'disabled'>
-
+          <section class="coins">
+            <label for="pennies">Pennies:</label>
+            <input
+              type="text"
+              id="pennies"
+              class="coinDisplay"
+              disabled="disabled"
+            />
+          </section>
+        </section>
       </form>
     </main>
   </body>
