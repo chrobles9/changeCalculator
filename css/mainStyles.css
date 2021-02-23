@@ -1,61 +1,78 @@
 :root {
+  /* accent color for title description */
   --accent: #c70039;
+  /* Calculator background color  */
   --background: #000;
+  /* Calculator text color  */
   --text: #fff;
+  /* Calculate button color  */
   --button: #0b0bc4;
-}
-
-* {
-  box-sizing: border-box;
-/*   border: red 0.5px dashed; */
+  /* Accent backup color for inputs */
+  --accentBackground: rgb(174, 108, 240);
+  /* Linear Gradient for input backgrounds on calculator  */
+  --gradient: linear-gradient(
+    90deg,
+    rgba(174, 108, 240, 1) 0%,
+    rgba(65, 9, 121, 1) 87%,
+    rgba(65, 9, 121, 1) 98%
+  );
 }
 
 body {
-  /* margin: 0 auto; */
+  font-size: calc(1em + 0.5vw);
   width: 100%;
-  text-align: center;
+  margin: 0.5rem auto;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  min-height: 100vh;
-  font-size: 1em;
+  text-align: center;
   background-color: #dfdfdf;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  font-size: calc(0.5em + 0.5vw);
 }
 
 .heading {
   font-family: "Ubuntu", sans-serif;
-  margin: 0 auto;
-  line-height: 1rem;
+  margin: 0 auto 2rem;
+  width: 100%;
 }
+
+.mainHeading {
+  margin: 0;
+}
+
+.subHeading {
+  margin: 0;
+}
+
 .accent {
   color: var(--accent);
 }
 
-.container {
+.calculator {
+  width: 80%;
+  color: var(--text);
+  max-width: 350px;
   font-family: "Roboto Mono", monospace;
   background-color: var(--background);
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  width: 70%;
-  margin: 3rem auto;
-  border: blue 1px solid;
-  max-width: 500px;
-  min-width: 300px;
-
-}
-
-.calculator {
-  width: 80%;
-  margin: 2rem auto;
-  color: var(--text);
-  max-width: 400px;
-
+  margin: 0 auto;
+  padding: 0.5rem 0;
 }
 
 .formControl {
-  margin: 1rem auto;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+}
+
+.formControl label {
+  display: block;
+  text-align: left;
 }
 
 .formControl input:focus {
@@ -63,62 +80,61 @@ body {
   outline: 0;
 }
 
-.formControl label {
-  /* margin: 0.5rem 0; */
-
-  text-align: left;
-}
-
 .formControl input {
-  width: 100%;
+  margin: 0 auto;
+  display: block;
+  width: 99%;
   text-align: center;
   border-radius: 15px;
   border: none;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 0.5rem 0;
   color: var(--text);
-  background: rgb(174, 108, 240);
-  background: linear-gradient(
-    90deg,
-    rgba(174, 108, 240, 1) 0%,
-    rgba(65, 9, 121, 1) 87%,
-    rgba(65, 9, 121, 1) 98%
-  );
+  /* backup background color is linear gradient is not compataible */
+  background: var(--accentBackground);
+  /* linear background gradient  */
+  background: var(--gradient);
 }
-.formControl input::placeholder{
-  color:var(--text);
+.formControl input::placeholder {
+  color: var(--text);
 }
 
-.formControl input:focus{
-  border: #0b0bc4 2px solid;
+.formControl input:hover {
+  border: var(--button) 2px solid;
+}
 
+.formControl input:focus {
+  border: var(--button) 2px solid;
 }
 
 #calculateBtn {
+  display: block;
   width: 100%;
   border-radius: 15px;
   border: none;
-  margin: 2rem auto;
-  font-size: 2rem;
+  margin: 1rem auto;
+  padding: 0.5rem 0;
   color: var(--text);
   background-color: var(--button);
 }
 
 #calculateBtn:focus {
   /* removes outline from inputs while in focus  */
-  border: rgb(174, 108, 240) 2px solid;
   outline: 0;
 }
 
-
+#calculateBtn:hover {
+  border: var(--accentBackground) 2px solid;
+}
 
 .display {
-  width: 100%;
+  width: 80%;
+  margin: 2rem auto;
 }
 
 .coins {
   margin: 1rem auto;
+  width: 100%;
+  display: block;
 }
 
 .display label {
@@ -128,16 +144,21 @@ body {
 
 .display input {
   border-radius: 15px;
+  display: block;
+  margin: 0 auto;
   border: none;
-  width: 100%;
+  width: 99%;
   text-align: center;
   color: var(--text);
-  font-size: 2rem;
-  background: rgb(174, 108, 240);
-  background: linear-gradient(
-    90deg,
-    rgba(174, 108, 240, 1) 0%,
-    rgba(65, 9, 121, 1) 87%,
-    rgba(65, 9, 121, 1) 98%
-  );
+  padding: 0.5rem 0;
+  /* backup background color is linear gradient is not compataible */
+  background: var(--accentBackground);
+  /* linear background gradient  */
+  background: var(--gradient);
+}
+
+@media only screen and (min-width: 768px) {
+  .heading {
+    margin: 1rem auto 5rem;
+  }
 }
